@@ -30,30 +30,12 @@ int main(void) {
   }
 
     
-  for (int i=2000; i<5000; i++) {
-    pi0 = mc_pi(i);
-    if (!(fabs(pi0 - M_PI) < 0.4)) {
-      printf("Estimate with even %d iterations is %f which is not accurate enough.\n", i, pi0);
-      abort();
-    }
-  }
-}
- float mc_pi(int a)
+  float wallis_pi(int n)
  {
-    int s1=0;
-    float pi;
-   for (int i=0; i<a; ++i)
-   {
-       float x=frandom();
-       float y=frandom();
-       float d=x*x + y*y;
-       
-       if (d<=1)
-           s1=s1+1;
-      
-   }
-   pi= (double) (s1*4)/a;
-   return pi;
-}
-
-
+    float s=1.0;
+    for (int i=1; i<=n; i++)
+    {
+        s=s*(4*i*i)/((4*i*i)-1);
+    }
+   return (2*s); 
+ }
