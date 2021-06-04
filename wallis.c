@@ -22,15 +22,13 @@ int main(void) {
       abort();
     }
   }
-  
-for (int i=500; i<3000; i++)
-{
-    pi = wallis_pi(i);
-    if (!(fabs(pi - M_PI) < 0.01))
+}
+ float wallis_pi(int n)
+ {
+    float s=1.0;
+    for (int i=1; i<=n; i++)
     {
-      printf("Estimate with even %d iterations is %f which is not accurate enough.\n", i, pi);
-      abort();
+        s=s*(4*i*i)/((4*i*i)-1);
     }
-  }  
-  
-
+   return (2*s); 
+ }
