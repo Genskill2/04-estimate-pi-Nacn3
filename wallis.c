@@ -27,28 +27,27 @@ int main(void) {
   
  float wallis_pi(int n)
  {
-    float s=1.0;
-    for (int i=1; i<=n; i++)
+    float n=1.0000;
+    for (int j=1; j<=i; j++)
     {
-        s=s*(4*i*i)/((4*i*i)-1);
+        n=n*(4*j*j)/((4*j*j)-1);
     }
-   return (2*s); 
+   n=2*n;
+   return n;
  }
   
-  float mc_pi(int a){
-    int s1=0;
-    float pi;
-   for (int i=0; i<a; ++i) {
+  float mc_pi(int i)
+  {
+     int c= 0;
+     for (int i=0; i<a; ++i)
+     {
        float x=frandom();
        float y=frandom();
-       float d=x*x + y*y;
-       
-       if (d<=1)
-           s1=s1+1;
-      
-   }
-   pi= (double) (s1*4)/a;
-   return pi;
+       if((x*x + y*y) <=1)
+         c+=1;
+     }
+     c=c*4;
+    return (float)c /i;
 }
   
 
