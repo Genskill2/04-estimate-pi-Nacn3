@@ -28,8 +28,17 @@ int main(void) {
       printf("Two separate estimates %f and %f are too different.\n", pi0, pi1);
       abort();
   }
-  
-  float mc_pi(int a){
+
+    
+  for (int i=2000; i<5000; i++) {
+    pi0 = mc_pi(i);
+    if (!(fabs(pi0 - M_PI) < 0.4)) {
+      printf("Estimate with even %d iterations is %f which is not accurate enough.\n", i, pi0);
+      abort();
+    }
+  }
+}
+   float mc_pi(int a){
     int s1=0;
     float pi;
    for (int i=0; i<a; ++i) {
@@ -44,4 +53,3 @@ int main(void) {
    pi= (double) (s1*4)/a;
    return pi;
 }
-    
