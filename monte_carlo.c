@@ -39,7 +39,7 @@ int main(void) {
   }
 }
 
-float mc_pi(int a)
+ float mc_pi(int a)
 {
     int s1=0;
     float pi;
