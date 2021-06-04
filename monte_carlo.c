@@ -40,7 +40,7 @@ int main(void) {
 }
 
  float mc_pi(int a)
-{
+ {
     int s1=0;
     float pi;
    for (int i=0; i<a; ++i)
@@ -56,6 +56,5 @@ int main(void) {
    pi= (double) (s1*4)/a;
    return pi;
 }
-
 
 
