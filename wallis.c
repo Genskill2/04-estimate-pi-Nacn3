@@ -25,16 +25,10 @@ int main(void) {
   
   
   
- float wallis_pi(int n)
- {
-    float n=1.0000;
-    for (int j=1; j<=i; j++)
-    {
-        n=n*(4*j*j)/((4*j*j)-1);
+for (int i=500; i<3000; i++) {
+    pi = wallis_pi(i);
+    if (!(fabs(pi - M_PI) < 0.01)) {
+      printf("Estimate with even %d iterations is %f which is not accurate enough.\n", i, pi);
+      abort();
     }
-   n=2*n;
-   return n;
- }
-  
-  
-
+  }
